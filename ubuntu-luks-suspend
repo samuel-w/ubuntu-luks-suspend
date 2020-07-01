@@ -106,9 +106,9 @@ systemctl stop systemd-journald-dev-log.socket
 systemctl stop systemd-journald.socket
 systemctl stop systemd-journald-audit.socket
 systemctl stop systemd-journald.service
+systemctl mask syslog.socket
 systemctl stop rsyslog
-systemctl stop syslog.socket
-
+sleep 5
 
 # Journalled ext4 filesystems in kernel versions 3.11+ will block suspend
 # if mounted with `barrier=1`, which is the default. Temporarily remount with
@@ -134,8 +134,8 @@ systemctl start systemd-journald-dev-log.socket
 systemctl start systemd-journald.socket
 systemctl start systemd-journald-audit.socket
 systemctl start systemd-journald.service
+systemctl unmask syslog.socket
 systemctl start rsyslog
-systemctl start syslog.socket
 
 # Restart udev
 systemctl start systemd-udevd-control.socket
@@ -149,5 +149,5 @@ run_dir "${SYSTEM_SLEEP_PATH}" post suspend
 loginctl unlock-sessions
 
 # Unmount initramfs, now unused
-cleanup
+umount_initramfs
 
