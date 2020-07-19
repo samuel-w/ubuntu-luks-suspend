@@ -40,8 +40,10 @@ Uninstallation
 Authors and license
 -------------------
 
-Copyright 2013 Vianney le Clément de Saint-Marcq <vleclement@gmail.com>  
+Copyright 2013 Vianney le Clément de Saint-Marcq <vleclement@gmail.com> 
+
 Copyright 2017 Zhongfu Li <me@zhongfu.li>
+
 Copyright 2020 Samuel Woon <samuel.woon@protonmail.com>
 
 This program is free software: you can redistribute it and/or modify
